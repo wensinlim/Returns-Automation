@@ -33,14 +33,29 @@ Ensure the following are installed:
 
 ### 2. Clone This Repository
 
-bash
+```bash
 git clone https://github.com/your-org/returns-automation.git
 cd returns-automation
+```
 
 ### 3. Install Dependencies
 
 It's recommended to use a virtual environment:
 
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+requirements.txt:
+```
+selenium
+gspread
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+```
 
 ## 🔐 Google Sheets API Setup
 
@@ -64,10 +79,9 @@ It's recommended to use a virtual environment:
 
 ## 🔑 Amazon & DPD Authentication
 
-- When you run the script, you will be prompted to enter your Amazon email and password.
+- When you run the script, you will be prompted to enter your DPD and Amazon email and password all at once.
 - For Amazon, after entering credentials, you may be prompted to enter a One-Time Password (OTP) if two-factor authentication (2FA) is enabled.
 - The script logs into Amazon Seller Central and selects the "United Kingdom" account.
-- The DPD login code is present but currently commented out; if you want to use DPD functionality, uncomment and provide your DPD credentials in the script.
 
 ---
 
@@ -90,7 +104,7 @@ The Google Sheet must have the following columns with headers on the first row:
 
 ## 🚀 Running the Script
 
-1. Ensure all dependencies are installed (see [Step 2: Install Dependencies](#-step-2-install-dependencies)).
+1. Ensure all dependencies are installed.
 
 2. Make sure your ChromeDriver version matches your installed Chrome browser.
 
