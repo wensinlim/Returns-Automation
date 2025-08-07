@@ -1,0 +1,3 @@
+# Ignore sensitive credential files
+credentials_oauth.json
+token.json
